@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination</title>
+</head>
+<body>
+    <a href="/logout">Logout</a>
+    <a href="/trips">Home</a>
+    <h1>Your Trip to {{place.destination}}</h1>
+    <p>Trip Maker: {{place.user.name}}</p>
+    <p>Itinerary: {{place.description}}</p>
+    <p>Travel Date From: {{place.travelfrom}}</p>
+    <p>Travel Date To: {{place.travelto}}</p>
+    <p>Users who are going on this trip: </p>
+    {% for joining in place.joiners.all %}
+      <p>{{joining.name}}</p>
+    {% endfor %}
+
+</body>
+</html>

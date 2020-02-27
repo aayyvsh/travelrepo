@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Log in</title>
+</head>
+<body>
+    <h1>Welcome to Travel Bud!</h1>
+        <div>
+        <h2>Register</h2>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/register" method="post">
+                {% csrf_token %}
+            <p>Name:<input type="text" name="name" id=""></p>
+            <p>Username:<input type="text" name="uname" id=""></p>
+            <p>Password:<input type="text" name="pw" id=""></p>
+            <p>Confirm Password:<input type="text" name="cpw" id=""></p>
+            <input type="submit" value="Register">
+        </form>
+        </div>
+        <div>
+        <h2>Log In</h2>
+        <form action="/login" method="post">
+                {% csrf_token %}
+            <p>Username:<input type="text" name="uname" id=""></p>
+            <p>Password:<input type="text" name="pw" id=""></p>
+            <input type="submit" value="Login">
+        </form>
+        </div>
+</body>
+</html>
